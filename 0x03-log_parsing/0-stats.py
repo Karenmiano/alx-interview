@@ -31,11 +31,14 @@ if __name__ == '__main__':
             file_size = 0
             for i in range(10):
                 input = sys.stdin.readline()
-                matches = re.search(reg, input)
-                if matches:
-                    res = matches.groupdict()
-                    status_codes[res['status_code']] += 1
-                    file_size += int(res['file_size'])
+                if input:
+                    matches = re.search(reg, input)
+                    if matches:
+                        res = matches.groupdict()
+                        status_codes[res['status_code']] += 1
+                        file_size += int(res['file_size'])
+                else:
+                    sys.exit(0)
         except (KeyboardInterrupt, EOFError):
             sys.exit(0)
         finally:
