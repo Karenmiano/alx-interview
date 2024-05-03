@@ -36,7 +36,7 @@ if __name__ == '__main__':
                     res = matches.groupdict()
                     status_codes[res['status_code']] += 1
                     file_size += int(res['file_size'])
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, EOFError):
             sys.exit(0)
         finally:
             print("File size: {}".format(file_size))
