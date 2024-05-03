@@ -39,7 +39,7 @@ if __name__ == '__main__':
         except KeyboardInterrupt:
             sys.exit(0)
         finally:
-            print(f"File size: {file_size}")
+            print("File size: {}".format(file_size))
             for key, item in status_codes.items():
                 if item:
-                    print(f'{key}: {item}')
+                    print('{}: {}'.format(key, item))
